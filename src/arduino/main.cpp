@@ -1,6 +1,3 @@
-//
-// Created by Oleksandra Baukh on 10/11/19.
-//
 #include <Arduino.h>
 #include <common/SumOperation.h>
 

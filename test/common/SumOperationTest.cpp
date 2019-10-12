@@ -1,6 +1,4 @@
-//
-// Created by Oleksandra Baukh on 10/12/19.
-//
+
 
 #include <unity.h>
 #include <common/SumOperation.h>
