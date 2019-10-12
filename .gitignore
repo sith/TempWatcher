@@ -1,0 +1,7 @@
+.pio
+CMakeListsPrivate.txt
+
+# Project exclude paths
+/cmake-build-all/
+/cmake-build-native/
+/cmake-build-uno/
