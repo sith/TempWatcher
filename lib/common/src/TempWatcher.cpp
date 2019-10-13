@@ -4,17 +4,17 @@
 
 #include "TempWatcher.h"
 
-template<typename TEMP_SENSOR, typename TIMER, typename DISPLAY>
-void TempWatcher<TEMP_SENSOR, TIMER, DISPLAY>::execute() {
+template<typename TEMP_SENSOR, typename TIMER, typename TEMPERATURE_DISPLAY>
+void TempWatcher<TEMP_SENSOR, TIMER, TEMPERATURE_DISPLAY>::execute() {
     if (timer.isExpired()) {
         int temperature = temperatureSensor.readTemperature();
         display.show(temperature);
     }
 }
 
-template<typename TEMPERATURE_SENSOR, typename TIMER, typename DISPLAY>
-TempWatcher<TEMPERATURE_SENSOR, TIMER, DISPLAY>::TempWatcher(TEMPERATURE_SENSOR &temperatureSensor, TIMER &timer,
-                                                             DISPLAY &display):
+template<typename TEMPERATURE_SENSOR, typename TIMER, typename TEMPERATURE_DISPLAY>
+TempWatcher<TEMPERATURE_SENSOR, TIMER, TEMPERATURE_DISPLAY>::TempWatcher(TEMPERATURE_SENSOR &temperatureSensor, TIMER &timer,
+                                                                         TEMPERATURE_DISPLAY &display):
         temperatureSensor(temperatureSensor),
         timer(timer),
         display(display) {

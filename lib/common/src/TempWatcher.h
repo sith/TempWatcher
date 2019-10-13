@@ -8,14 +8,14 @@
 template<
         typename TEMPERATURE_SENSOR,
         typename TIMER,
-        typename DISPLAY
+        typename TEMPERATURE_DISPLAY
 >
 class TempWatcher {
     TEMPERATURE_SENSOR &temperatureSensor;
     TIMER &timer;
-    DISPLAY &display;
+    TEMPERATURE_DISPLAY &display;
 public:
-    TempWatcher(TEMPERATURE_SENSOR &temperatureSensor, TIMER &timer, DISPLAY &display);
+    TempWatcher(TEMPERATURE_SENSOR &temperatureSensor, TIMER &timer, TEMPERATURE_DISPLAY &display);
 
     void execute();
 };
