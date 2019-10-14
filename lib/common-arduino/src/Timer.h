@@ -10,7 +10,7 @@ class Timer {
 private:
     long timerValue = 0;
 public:
-    Timer(long timerValue);
+    explicit Timer(long timerValue);
 
 private:
     long nextExpirationValue = timerValue;
