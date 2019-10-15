@@ -1,9 +1,6 @@
-//
-// Created by Oleksandra Baukh on 10/13/19.
-//
-
+#include <LiquidCrystal.h>
+#include <Wire.h>
 #include "LCDTemperatureDisplay.h"
-
 void LCDTemperatureDisplay::show(float temperature) {
     lcd.setCursor(0, 1);
     lcd.print("Temp = ");

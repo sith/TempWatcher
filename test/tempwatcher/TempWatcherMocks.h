@@ -34,5 +34,14 @@ public:
     }
 };
 
+class MockTemperatureLogger {
+public:
+    bool logged = false;
+    void log(float temperature) {
+        this->logged = true;
+    }
+};
+
+
 #endif //TEMPWATCHER_TEMPWATCHERMOCKS_H
 
