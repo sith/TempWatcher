@@ -4,7 +4,7 @@
 #include <DHT11TemperatureSensor.cpp>
 #include <LCDTemperatureDisplay.cpp>
 
-Timer timer = Timer(500);
+Timer timer = Timer(2000);
 DHT11TemperatureSensor temperatureSensor;
 LCDTemperatureDisplay display = LCDTemperatureDisplay();
 TempWatcher<DHT11TemperatureSensor, Timer, LCDTemperatureDisplay> tempWatcher(temperatureSensor, timer, display);
@@ -12,6 +12,7 @@ TempWatcher<DHT11TemperatureSensor, Timer, LCDTemperatureDisplay> tempWatcher(te
 void setup() {
     Serial.begin(9600);
     display.init();
+    temperatureSensor.init();
     Serial.println("Initializing...");
 }
 

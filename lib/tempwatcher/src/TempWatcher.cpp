@@ -7,7 +7,7 @@
 template<typename TEMP_SENSOR, typename TIMER, typename TEMPERATURE_DISPLAY>
 void TempWatcher<TEMP_SENSOR, TIMER, TEMPERATURE_DISPLAY>::execute() {
     if (timer.isExpired()) {
-        int temperature = temperatureSensor.readTemperature();
+        float temperature = temperatureSensor.readTemperature();
         display.show(temperature);
     }
 }

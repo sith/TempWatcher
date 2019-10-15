@@ -3,8 +3,11 @@
 //
 
 #include "DHT11TemperatureSensor.h"
-#include <Arduino.h>
 
-int DHT11TemperatureSensor::readTemperature() {
-    return random(100);
+float DHT11TemperatureSensor::readTemperature() {
+    return dht.readTemperature();
+}
+
+void DHT11TemperatureSensor::init() {
+    dht.begin();
 }

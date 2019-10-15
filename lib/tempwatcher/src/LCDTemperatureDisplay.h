@@ -17,7 +17,7 @@ class LCDTemperatureDisplay {
 public:
     void init();
 
-    void show(int temperature);
+    void show(float temperature);
 
 };
 

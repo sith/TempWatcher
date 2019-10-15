@@ -7,9 +7,9 @@
 
 class MockSensor {
 public:
-    int temperature = -1;
+    float temperature = -1;
 
-    int readTemperature() {
+    float readTemperature() {
         return temperature;
     }
 };
@@ -28,7 +28,7 @@ public:
     int displayedTemperature;
     bool displayed;
 
-    void show(int temperature) {
+    void show(float temperature) {
         this->displayed = true;
         this->displayedTemperature = temperature;
     }
