@@ -3,7 +3,6 @@
 //
 
 #include "LCDTemperatureDisplay.h"
-#include <LiquidCrystal.h>
 
 void LCDTemperatureDisplay::show(float temperature) {
     lcd.setCursor(0, 1);

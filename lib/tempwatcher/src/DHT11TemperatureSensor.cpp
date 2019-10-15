@@ -3,9 +3,9 @@
 //
 
 #include "DHT11TemperatureSensor.h"
-
 float DHT11TemperatureSensor::readTemperature() {
-    return dht.readTemperature();
+    float temperature = dht.readTemperature(true);
+    return temperature;
 }
 
 void DHT11TemperatureSensor::init() {
