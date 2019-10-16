@@ -5,15 +5,8 @@
 #include "SerialTemperatureLogger.h"
 #include <Arduino.h>
 
-void SerialTemperatureLogger::init() {
-    if (!Serial) {
-        Serial.begin(9600);
-        Serial.println("SerialTemperatureLogger initialized Serial");
-    }
-}
-
 void SerialTemperatureLogger::log(float temperature) {
-    Serial.print("tempwatcher_");
+    Serial.print("tempwatcher");
     Serial.print("_");
     Serial.print(millis());
     Serial.print("_");

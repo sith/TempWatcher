@@ -8,8 +8,6 @@
 
 class SerialTemperatureLogger {
 public:
-    void init();
-
     void log(float temperature);
 };
 

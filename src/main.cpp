@@ -1,22 +1,26 @@
 #include <Arduino.h>
+#include <Wire.h>
 #include <TempWatcher.cpp>
 #include <Timer.cpp>
-#include "DHT11TemperatureSensor.cpp"
+#include "DHTTemperatureSensor.cpp"
 #include "LCDTemperatureDisplay.cpp"
 #include "SerialTemperatureLogger.cpp"
 
+
+#include <DHT.h>
+
+
 Timer timer = Timer(2000);
-DHT11TemperatureSensor temperatureSensor;
+DHTTemperatureSensor temperatureSensor = DHTTemperatureSensor(DHT22);
 LCDTemperatureDisplay display = LCDTemperatureDisplay();
 SerialTemperatureLogger temperatureLogger;
-TempWatcher<DHT11TemperatureSensor, Timer, LCDTemperatureDisplay, SerialTemperatureLogger> tempWatcher(
+TempWatcher<DHTTemperatureSensor, Timer, LCDTemperatureDisplay, SerialTemperatureLogger> tempWatcher(
         temperatureSensor, timer, display, temperatureLogger);
 
 void setup() {
-//    Serial.begin(9600);
+    Serial.begin(9600);
     display.init();
     temperatureSensor.init();
-    temperatureLogger.init();
     Serial.println("Initializing...");
 }
 
