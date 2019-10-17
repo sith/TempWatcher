@@ -1,5 +1,6 @@
 
 #include "LCDTemperatureDisplay.h"
+
 void LCDTemperatureDisplay::show(float temperature) {
     lcd.setCursor(0, 1);
     lcd.print("Temp = ");
@@ -9,5 +10,10 @@ void LCDTemperatureDisplay::show(float temperature) {
 }
 
 void LCDTemperatureDisplay::init() {
-    lcd.begin(16, 2);
+    int status;
+    status = lcd.begin(LCD_COLS, LCD_ROWS);
+    if (status) {
+        status = -status;
+        hd44780::fatalError(status);
+    }
 }

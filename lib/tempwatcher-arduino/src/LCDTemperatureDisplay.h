@@ -5,11 +5,17 @@
 #ifndef TEMPWATCHER_LCDTEMPERATUREDISPLAY_H
 #define TEMPWATCHER_LCDTEMPERATUREDISPLAY_H
 
-#include <LiquidCrystal.h>
+
+const int LCD_COLS = 16;
+const int LCD_ROWS = 2;
+
 #include <Wire.h>
+#include <hd44780.h>                       // main hd44780 header
+#include <hd44780ioClass/hd44780_I2Cexp.h> // i2c expander i/o class header
+
 
 class LCDTemperatureDisplay {
-    LiquidCrystal lcd{7, 8, 9, 10, 11, 12};
+hd44780_I2Cexp lcd;
 public:
     void init();
 

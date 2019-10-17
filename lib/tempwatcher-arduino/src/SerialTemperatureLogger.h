@@ -6,6 +6,7 @@
 #define TEMPWATCHER_SERIALTEMPERATURELOGGER_H
 
 
+
 class SerialTemperatureLogger {
 public:
     void log(float temperature);
